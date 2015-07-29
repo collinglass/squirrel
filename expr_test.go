@@ -151,7 +151,7 @@ func TestNullTypeInt64(t *testing.T) {
 	assert.Empty(t, args)
 	assert.Equal(t, "user_id IS NULL", sql)
 
-	userID.Scan(10)
+	userID.Scan(int64(10))
 	b = Eq{"user_id": userID}
 	sql, args, err = b.ToSql()
 
